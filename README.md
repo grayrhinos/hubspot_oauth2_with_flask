@@ -46,7 +46,11 @@
 #### 3. Generate SSL certificates to appease HubSpot HTTPS requirement for oauth callback. A script has been written to aid this effort.
 
 `sh ./scripts/generate_certs`
-
+If the scrip does not work, here's how you can do it manually for Windows:
+  1. Install Chocolatey (will be needed for installing mkcert) [Link to Installation](https://chocolatey.org/install)
+  2. Install mkcert `choco install mkcert`
+  3. Redicrect to "/certs" and run  `mkcert -install hs-oauth.localhost`
+  
 **Note:** Linux users install OpenSSL via system package manager and Windows users need to install OpenSSL via a .exe
 
 If successful, you should have a key.pem and cert.pem file in the certs/ directory
